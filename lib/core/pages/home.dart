@@ -11,49 +11,41 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final imageUrls = [
-    "https://wwwimage-us.pplusstatic.com/thumbnails/photos/w370-q80/movie_asset/59/74/33/sml_salone_poster_1400x2100.jpg",
-    "https://i.ytimg.com/vi/Awg3cWuHfoc/maxresdefault.jpg",
-    "https://tr.web.img4.acsta.net/pictures/22/09/26/09/43/3388433.jpg"
-  ];
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 8,
-      color: Colors.grey,
-      child: Stack(
-        children: [
-          Column(
-            children: [
-              Expanded(
-                flex: 1,
-                child: imageWidget(Constants.image_adress),
-              ),
-              Expanded(
-                flex: 1,
-                child: CarouselSlider.builder(
-                    itemCount: 3,
-                    itemBuilder: (context, index, realIndex) {
-                      return imageWidget(imageUrls[index]);
-                    },
-                    options: CarouselOptions()),
-              )
-            ],
+    return Stack(
+      children: [
+        Container(
+          height: double.infinity,
+          color: const Color(0XFF000B49),
+        ),
+        imageWidget(Constants.image_adress),
+        const Positioned.fill(
+            child: DecoratedBox(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        colors: [Colors.transparent, Color(0XFF000B49)],
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        stops: [0.3, 0.5])))),
+        Positioned(
+          bottom: 50,
+          child: Text(
+            "HELLO TO MY MOVİES APP !",
+            style: Constants.homeTitle,
           ),
-        ],
-      ),
+        )
+      ],
     );
   }
 
   Widget imageWidget(String imageurl) {
-    return Container(
-      color: Colors.black,
-      padding: Constants.EI,
-      child: CachedNetworkImage(
-          fit: BoxFit.cover,
-          imageUrl: imageurl,
-          placeholder: (context, url) => const CircularProgressIndicator(),
-          errorWidget: (context, url, error) => const Icon(Icons.error)),
-    );
+    return CachedNetworkImage(
+        height: MediaQuery.of(context).size.height / 2,
+        width: double.infinity,
+        fit: BoxFit.fitWidth,
+        imageUrl: imageurl,
+        placeholder: (context, url) => const CircularProgressIndicator(),
+        errorWidget: (context, url, error) => const Icon(Icons.error));
   }
 }
