@@ -25,12 +25,12 @@ class _MovieListCardState extends State<MovieListCard> {
 }
 
 Widget _buildCard(BuildContext context, MovieModel model, Size size) {
-  return GridView.builder(
-    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2, childAspectRatio: 1 / 3.4),
+  return ListView.builder(
     itemCount: model.results!.length,
     itemBuilder: (context, index) {
       return Card(
+        elevation: 8,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         child: Container(
           margin: Constants.EI,
           child: Column(
@@ -39,9 +39,7 @@ Widget _buildCard(BuildContext context, MovieModel model, Size size) {
               CachedNetworkImage(
                 imageUrl:
                     "https://image.tmdb.org/t/p/original/${model.results![index].posterPath}",
-                height: size.height * 0.2,
-                width: double.infinity,
-                fit: BoxFit.fill,
+                fit: BoxFit.cover,
                 placeholder: (context, url) =>
                     const CircularProgressIndicator(),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
