@@ -1,5 +1,5 @@
-import 'package:movie_app/api/movie_model.dart';
-import 'package:movie_app/api/movie_provider.dart';
+import 'movie_model.dart';
+import 'movie_provider.dart';
 
 class ApiRepository {
   final _provider = ApiProvider();

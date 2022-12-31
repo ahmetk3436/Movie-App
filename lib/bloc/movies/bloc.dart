@@ -1,7 +1,8 @@
 import 'package:bloc/bloc.dart';
-import 'package:movie_app/api/movie_repository.dart';
 import 'package:movie_app/bloc/movies/event.dart';
 import 'package:movie_app/bloc/movies/state.dart';
+
+import '../../api/movie_list/movie_repository.dart';
 
 class MovieBloc extends Bloc<MovieEvent, MovieState> {
   MovieBloc() : super(MovieInitial()) {
