@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:movie_app/bloc/movies/bloc.dart';
 import 'package:movie_app/bloc/movies/event.dart';
+import 'package:movie_app/bloc/weather/bloc.dart';
+import 'package:movie_app/bloc/weather/event.dart';
 import 'package:movie_app/core/constants/constants.dart';
 import 'package:movie_app/core/pages/home.dart';
 import 'package:movie_app/core/pages/settings.dart';
-import 'package:movie_app/core/pages/buildListMovie.dart';
+import 'package:movie_app/core/pages/weatherData.dart';
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -16,10 +18,12 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final MovieBloc dataBloc = MovieBloc();
+  final WeatherBloc weatherBloc = WeatherBloc();
   Widget screenWidget = const HomePage();
   @override
   void initState() {
     dataBloc.add(GetMovieList());
+    weatherBloc.add(GetWeatherList());
     super.initState();
   }
 
@@ -41,7 +45,6 @@ class _AppState extends State<App> {
   }
 
   GNav bottomGNav() {
-    final Size size = MediaQuery.of(context).size;
     return GNav(
         backgroundColor: Colors.black,
         color: Colors.white,
@@ -57,7 +60,8 @@ class _AppState extends State<App> {
               break;
             case 1:
               setState(() {
-                screenWidget = MovieListBuilder(dataBloc: dataBloc, size: size);
+                screenWidget = WeatherData(weatherBloc: weatherBloc);
+                //screenWidget = MovieListBuilder(dataBloc: dataBloc, size: size);
               });
               break;
             case 2:

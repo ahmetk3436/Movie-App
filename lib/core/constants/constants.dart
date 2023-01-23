@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Constants {
   static String base_url = "https://api.themoviedb.org/3/movie/";
+  static String weather_base_url = "https://api.open-meteo.com/";
   static TextStyle homeTextStyle = const TextStyle(
     color: Colors.grey,
     fontSize: 18,
