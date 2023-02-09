@@ -4,7 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:movie_app/bloc/weather/bloc.dart';
 import 'package:movie_app/bloc/weather/state.dart';
-import 'package:movie_app/core/widgets/fl_chart.dart';
+import '../../core/widgets/build_loading.dart';
+import '../widgets/fl_chart.dart';
 
 class WeatherData extends StatefulWidget {
   const WeatherData({
