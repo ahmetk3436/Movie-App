@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static String base_url = "https://api.themoviedb.org/3/movie/";
-  static String weather_base_url = "https://api.open-meteo.com/";
+  static String baseUrl = "https://api.themoviedb.org/3/movie/";
+  static String weatherBaseUrl = "https://api.open-meteo.com/";
   static TextStyle homeTextStyle = const TextStyle(
     color: Colors.grey,
     fontSize: 18,
@@ -18,10 +18,10 @@ class Constants {
     fontSize: 27,
     fontWeight: FontWeight.bold,
   );
-  static EdgeInsets EI = const EdgeInsets.all(8.0);
-  static SizedBox GAP = const SizedBox(
+  static EdgeInsets ei = const EdgeInsets.all(8.0);
+  static SizedBox gap = const SizedBox(
     height: 8,
   );
-  static String image_adress =
+  static String imageAdress =
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpj8fCEmMBQyi8oj6l9rzEcifTJo7M5jRwXVdTdwHsTgsfS1Nk";
 }

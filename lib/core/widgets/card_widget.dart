@@ -32,7 +32,7 @@ Widget _buildCard(BuildContext context, MovieModel model, Size size) {
         elevation: 8,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
         child: Container(
-          margin: Constants.EI,
+          margin: Constants.ei,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -44,12 +44,12 @@ Widget _buildCard(BuildContext context, MovieModel model, Size size) {
                     const CircularProgressIndicator(),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
-              Constants.GAP,
+              Constants.gap,
               Text(
                 "Movie Name: ${model.results![index].originalTitle}",
                 style: Constants.movieTitle,
               ),
-              Constants.GAP,
+              Constants.gap,
               SizedBox(
                 child: Text(
                   "Movie Description : ${model.results![index].overview}",

@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app/bloc/movies/event.dart';
 import 'package:movie_app/bloc/movies/state.dart';
 

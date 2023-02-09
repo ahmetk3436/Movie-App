@@ -8,7 +8,7 @@ import '../../core/constants/constants.dart';
 class ApiProvider {
   final Dio _dio = Dio();
   final String _url =
-      '${Constants.weather_base_url}v1/forecast?latitude=40.21&longitude=29.04&hourly=temperature_2m&current_weather=true&timezone=auto';
+      '${Constants.weatherBaseUrl}v1/forecast?latitude=40.21&longitude=29.04&hourly=temperature_2m&current_weather=true&timezone=auto';
 
   Future<WeatherModel> fetchWeatherData() async {
     try {

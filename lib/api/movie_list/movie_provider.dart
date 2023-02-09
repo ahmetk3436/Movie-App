@@ -6,7 +6,7 @@ import 'movie_model.dart';
 class ApiProvider {
   final Dio _dio = Dio();
   final String _url =
-      '${Constants.base_url}3/recommendations?api_key=c412c4ac9b1f384bb31d9e684b02850e';
+      '${Constants.baseUrl}3/recommendations?api_key=c412c4ac9b1f384bb31d9e684b02850e';
 
   Future<MovieModel> fetchMovieList() async {
     try {

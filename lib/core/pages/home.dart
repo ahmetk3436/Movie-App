@@ -1,5 +1,4 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/constants/constants.dart';
 
@@ -19,7 +18,7 @@ class _HomePageState extends State<HomePage> {
           height: double.infinity,
           color: const Color(0XFF000B49),
         ),
-        imageWidget(Constants.image_adress),
+        imageWidget(Constants.imageAdress),
         const Positioned.fill(
             child: DecoratedBox(
                 decoration: BoxDecoration(

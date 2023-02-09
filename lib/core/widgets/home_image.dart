@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/constants/constants.dart';
 
-import 'imageWidget.dart';
+import 'image_widget.dart';
 
 Stack FLChart(BuildContext context) {
   return Stack(
@@ -10,7 +10,7 @@ Stack FLChart(BuildContext context) {
         height: double.infinity,
         color: const Color(0XFF000B49),
       ),
-      ImageWidget(imageurl: Constants.image_adress, context: context),
+      ImageWidget(imageurl: Constants.imageAdress, context: context),
       const Positioned.fill(
           child: DecoratedBox(
               decoration: BoxDecoration(

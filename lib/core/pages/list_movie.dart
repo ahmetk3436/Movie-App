@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/movies/bloc.dart';
 import '../../bloc/movies/state.dart';
-import '../widgets/buildLoading.dart';
-import '../widgets/cardWidget.dart';
 
 class MovieListBuilder extends StatefulWidget {
   const MovieListBuilder(
